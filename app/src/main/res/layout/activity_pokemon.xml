@@ -67,6 +67,7 @@
     </LinearLayout>
 
     <View
+        android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="#8F0000"
@@ -176,5 +177,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IVpokemonD" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLguiaBaja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="495dp" />
+
+
+    <ImageButton
+        android:id="@+id/IBAnterior"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/FABVolver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/GLguiaBaja"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <ImageButton
+        android:id="@+id/IBSiguiente"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="20dp"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/FABVolver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/GLguiaBaja"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:backgroundTint="@color/black"
+        android:tint="@color/white"
+        android:id="@+id/FABVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
