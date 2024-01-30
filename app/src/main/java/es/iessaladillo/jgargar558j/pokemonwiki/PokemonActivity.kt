@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.lang.reflect.Modifier
 
 class PokemonActivity : AppCompatActivity() {
     lateinit var tvNombre:TextView
@@ -22,6 +23,10 @@ class PokemonActivity : AppCompatActivity() {
     lateinit var ibSiguiente:ImageButton
     lateinit var pokemon: Pokemon
     lateinit var fabVolver:FloatingActionButton
+    lateinit var ivPokeballLeft:ImageView
+    lateinit var ivPokeballRight:ImageView
+    lateinit var tvSiguiente:TextView
+    lateinit var tvAnterior:TextView
     var next: Pokemon? = null
     var previous: Pokemon? = null
     lateinit var pokedex:ArrayList<Pokemon>
@@ -58,6 +63,7 @@ class PokemonActivity : AppCompatActivity() {
                 ivPokemon.setImageResource(pokemon.imagen)
             }
         }
+
         when(getString(pokemon.id).toInt()){
             in 0..9 -> {tvNumero.text = "#00"+getString(pokemon.id)}
             in 10..99 -> {tvNumero.text = "#0"+getString(pokemon.id)}
@@ -65,6 +71,8 @@ class PokemonActivity : AppCompatActivity() {
         }
         if ((getString(pokemon.id).toInt())==1){
             ibAnterior.setImageResource(R.drawable.vacio)
+            ivPokeballLeft.setImageResource(R.drawable.vacio)
+            tvAnterior.text = ""
             ibAnterior.setOnClickListener { }
             if (next != null) {
                 ibSiguiente.setImageResource(next!!.imagen)
@@ -74,6 +82,8 @@ class PokemonActivity : AppCompatActivity() {
             }
         }else if ((getString(pokemon.id).toInt())==(getString(R.integer.totalNumberOfPokemonInPokedex).toInt())){
             ibSiguiente.setImageResource(R.drawable.vacio)
+            ivPokeballRight.setImageResource(R.drawable.vacio)
+            tvSiguiente.text = ""
             ibSiguiente.setOnClickListener { }
             if (previous != null) {
                 ibAnterior.setImageResource(previous!!.imagen)
@@ -108,7 +118,7 @@ class PokemonActivity : AppCompatActivity() {
         var bundleList:ArrayList<Pokemon> = ArrayList(pokedex)
         bundle.putSerializable("fPokemon",bundleList)
         intent.putExtra("bundlelist",bundle)
-        if(pokedex[next!!.idString.toInt()-1].id==getString(R.integer.totalNumberOfPokemonInPokedex).toInt()){
+        if(pokedex[next!!.idString.toInt()-1].idString.toInt()>=getString(R.integer.totalNumberOfPokemonInPokedex).toInt()){
             intent.putExtra("pokemon",next)
             intent.putExtra("previous",pokemon)
         }else{
@@ -125,7 +135,7 @@ class PokemonActivity : AppCompatActivity() {
         var bundleList:ArrayList<Pokemon> = ArrayList(pokedex)
         bundle.putSerializable("fPokemon",bundleList)
         intent.putExtra("bundlelist",bundle)
-        if (pokedex[previous!!.idString.toInt()-1].id==0){
+        if (pokedex[previous!!.idString.toInt()-1].idString.toInt()<=1){
             intent.putExtra("pokemon",previous)
             intent.putExtra("next",pokemon)
         }else{
@@ -147,5 +157,9 @@ class PokemonActivity : AppCompatActivity() {
         ibAnterior=findViewById(R.id.IBAnterior)
         ibSiguiente=findViewById(R.id.IBSiguiente)
         fabVolver=findViewById(R.id.FABVolver)
+        ivPokeballLeft=findViewById(R.id.IVPokeballLeft)
+        ivPokeballRight=findViewById(R.id.IVPokeballRight)
+        tvSiguiente=findViewById(R.id.TVSiguiente)
+        tvAnterior=findViewById(R.id.TVAnterior)
     }
 }

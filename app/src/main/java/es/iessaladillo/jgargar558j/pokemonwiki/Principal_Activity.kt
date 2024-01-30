@@ -4,13 +4,20 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ListView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class Principal_Activity : AppCompatActivity() {
 
     private lateinit var lisPokemon:ListView
     private lateinit var names:MutableList<Pokemon>
+    private var muestreo:MutableList<Pokemon> = mutableListOf()
+    private var busqueda:MutableList<Pokemon> = mutableListOf()
     private lateinit var adapter:MyAdapter
+    private lateinit var etBuscador:EditText
+    private lateinit var buscador:FloatingActionButton
+    private lateinit var pistaBusqueda:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +31,10 @@ class Principal_Activity : AppCompatActivity() {
         initializeList()
 
         lisPokemon = findViewById(R.id.lisPokemon)
-        adapter = MyAdapter(this,names)
+        etBuscador = findViewById(R.id.ETBuscador)
+        buscador = findViewById(R.id.Buscar)
+        muestreo.addAll(names)
+        adapter = MyAdapter(this,muestreo)
         lisPokemon.adapter = adapter
 
         lisPokemon.setOnItemClickListener { parent,view,position,id ->
@@ -43,6 +53,19 @@ class Principal_Activity : AppCompatActivity() {
                 intent.putExtra("previous",names[position-1])
             }
             startActivity(intent)
+        }
+        buscador.setOnClickListener{
+            muestreo.clear()
+            pistaBusqueda = etBuscador.text.toString().lowercase()
+            if (!pistaBusqueda.isNullOrBlank()){
+                for (i in 0 until (getString(R.integer.totalNumberOfPokemonInPokedex).toInt())){
+                    if (names[i].name.lowercase().contains(pistaBusqueda)){
+                        busqueda.add(names[i])
+                    }
+                }
+            }
+            muestreo.addAll(busqueda)
+            adapter.notifyDataSetChanged()
         }
     }
 

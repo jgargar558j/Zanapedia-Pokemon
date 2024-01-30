@@ -25,7 +25,9 @@
         android:layout_height="5dp"
         android:background="#8F0000"
         tools:ignore="MissingConstraints" />
+
     <View
+        android:id="@+id/view4"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="#8F0000"
@@ -183,8 +185,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="495dp" />
+        app:layout_constraintGuide_end="276dp" />
 
+    <ImageView
+        android:id="@+id/IVPokeballLeft"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/pokeball"
+        app:layout_constraintBottom_toTopOf="@+id/FABVolver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/GLguiaBaja"/>
 
     <ImageButton
         android:id="@+id/IBAnterior"
@@ -198,6 +209,30 @@
         app:layout_constraintTop_toTopOf="@+id/GLguiaBaja"
         app:srcCompat="@drawable/ic_launcher_background" />
 
+    <TextView
+        android:id="@+id/TVAnterior"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/peach"
+        android:text="Anterior"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVPokeballLeft" />
+
+    <ImageView
+        android:id="@+id/IVPokeballRight"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/pokeball"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/FABVolver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/GLguiaBaja" />
+
     <ImageButton
         android:id="@+id/IBSiguiente"
         android:layout_width="130dp"
@@ -210,6 +245,19 @@
         app:layout_constraintTop_toTopOf="@+id/GLguiaBaja"
         app:srcCompat="@drawable/ic_launcher_background" />
 
+    <TextView
+        android:id="@+id/TVSiguiente"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:fontFamily="@font/peach"
+        android:text="Siguiente"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVPokeballLeft" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:backgroundTint="@color/black"
