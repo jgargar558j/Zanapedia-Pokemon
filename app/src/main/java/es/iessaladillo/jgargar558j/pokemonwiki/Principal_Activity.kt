@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ListView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -18,6 +19,9 @@ class Principal_Activity : AppCompatActivity() {
     private lateinit var etBuscador:EditText
     private lateinit var buscador:FloatingActionButton
     private lateinit var pistaBusqueda:String
+    private lateinit var ibObjetos:ImageButton
+    private lateinit var ibPokemon:ImageButton
+    private var isSet:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +34,8 @@ class Principal_Activity : AppCompatActivity() {
     private fun initializeVariables(){
         initializeList()
 
+        ibObjetos = findViewById(R.id.IBObjetos)
+        ibPokemon = findViewById(R.id.IBPokemon)
         lisPokemon = findViewById(R.id.lisPokemon)
         etBuscador = findViewById(R.id.ETBuscador)
         buscador = findViewById(R.id.Buscar)
@@ -38,24 +44,27 @@ class Principal_Activity : AppCompatActivity() {
         lisPokemon.adapter = adapter
 
         lisPokemon.setOnItemClickListener { parent,view,position,id ->
-            val intent = Intent(this,PokemonActivity::class.java)
-            intent.putExtra("pokemon", names[position])
-            var bundle = Bundle()
-            var bundleList:ArrayList<Pokemon> = ArrayList(names)
-            bundle.putSerializable("fPokemon",bundleList)
-            intent.putExtra("bundlelist",bundle)
-            if(names[position]==names[0]){
-                intent.putExtra("next",names[position+1])
-            }else if(names[position]==names[getString(R.integer.totalNumberOfPokemonInPokedex).toInt()-1]){
-                intent.putExtra("previous",names[position-1])
-            }else{
-                intent.putExtra("next",names[position+1])
-                intent.putExtra("previous",names[position-1])
+            if (!isSet){
+                val intent = Intent(this,PokemonActivity::class.java)
+                intent.putExtra("pokemon", names[position])
+                var bundle = Bundle()
+                var bundleList:ArrayList<Pokemon> = ArrayList(names)
+                bundle.putSerializable("fPokemon",bundleList)
+                intent.putExtra("bundlelist",bundle)
+                if(names[position]==names[0]){
+                    intent.putExtra("next",names[position+1])
+                }else if(names[position]==names[getString(R.integer.totalNumberOfPokemonInPokedex).toInt()-1]){
+                    intent.putExtra("previous",names[position-1])
+                }else{
+                    intent.putExtra("next",names[position+1])
+                    intent.putExtra("previous",names[position-1])
+                }
+                startActivity(intent)
             }
-            startActivity(intent)
         }
         buscador.setOnClickListener{
             muestreo.clear()
+            busqueda.clear()
             pistaBusqueda = etBuscador.text.toString().lowercase()
             if (!pistaBusqueda.isNullOrBlank()){
                 for (i in 0 until (getString(R.integer.totalNumberOfPokemonInPokedex).toInt())){
@@ -65,7 +74,21 @@ class Principal_Activity : AppCompatActivity() {
                 }
             }
             muestreo.addAll(busqueda)
+            if(muestreo.size==0){
+                muestreo.addAll(names)
+                isSet = false
+            }else{
+                isSet=true
+            }
             adapter.notifyDataSetChanged()
+        }
+        ibObjetos.setOnClickListener {
+            val intent = Intent(this,PrincipalObjeto_Activity::class.java)
+            startActivity(intent)
+        }
+        ibPokemon.setOnClickListener {
+            val intent = Intent(this,Principal_Activity::class.java)
+            startActivity(intent)
         }
     }
 

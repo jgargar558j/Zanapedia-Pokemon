@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Principal_Activity"
+    tools:context=".PrincipalObjeto_Activity"
     android:background="@color/FondoDePantalla">
 
     <View
@@ -75,26 +75,24 @@
         android:background="#8F0000"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:ignore="MissingConstraints" />
-
     <View
-        android:id="@+id/view7"
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:background="#8F0000"
-        app:layout_constraintBottom_toTopOf="@+id/VINegro" />
+        app:layout_constraintBottom_toTopOf="@+id/VINegro"/>
     <View
         android:id="@+id/VINegro"
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:background="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/lisPokemon" />
+        app:layout_constraintBottom_toTopOf="@+id/lisObjetos" />
 
     <EditText
         android:id="@+id/ETBuscador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="@color/black"
         android:padding="10dp"
         android:layout_marginStart="20dp"
@@ -117,7 +115,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/lisPokemon"
+        android:id="@+id/lisObjetos"
         android:layout_width="match_parent"
         android:layout_height="590dp"
         android:layout_marginTop="15dp"
