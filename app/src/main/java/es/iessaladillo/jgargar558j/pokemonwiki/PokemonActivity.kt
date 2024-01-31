@@ -30,6 +30,7 @@ class PokemonActivity : AppCompatActivity() {
     var next: Pokemon? = null
     var previous: Pokemon? = null
     lateinit var pokedex:ArrayList<Pokemon>
+    lateinit var pokedexNueva:ArrayList<Pokemon>
 
     @SuppressLint("SetTextI18n", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,7 +70,7 @@ class PokemonActivity : AppCompatActivity() {
             in 10..99 -> {tvNumero.text = "#0"+getString(pokemon.id)}
             in 100..151 -> {tvNumero.text = "#"+getString(pokemon.id)}
         }
-        if ((getString(pokemon.id).toInt())==1){
+        if (((getString(pokemon.id).toInt())==1)){
             ibAnterior.setImageResource(R.drawable.vacio)
             ivPokeballLeft.setImageResource(R.drawable.vacio)
             tvAnterior.text = ""
@@ -80,7 +81,7 @@ class PokemonActivity : AppCompatActivity() {
             ibSiguiente.setOnClickListener {
                 next()
             }
-        }else if ((getString(pokemon.id).toInt())==(getString(R.integer.totalNumberOfPokemonInPokedex).toInt())){
+        }else if (((getString(pokemon.id).toInt())==(getString(R.integer.totalNumberOfPokemonInPokedex).toInt()))){
             ibSiguiente.setImageResource(R.drawable.vacio)
             ivPokeballRight.setImageResource(R.drawable.vacio)
             tvSiguiente.text = ""

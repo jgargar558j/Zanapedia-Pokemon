@@ -60,6 +60,22 @@ class Principal_Activity : AppCompatActivity() {
                     intent.putExtra("previous",names[position-1])
                 }
                 startActivity(intent)
+            }else{
+                val intent = Intent(this,PokemonActivity::class.java)
+                intent.putExtra("pokemon",muestreo[position])
+                var bundle=Bundle()
+                var bundleList:ArrayList<Pokemon> = ArrayList(names)
+                bundle.putSerializable("fPokemon",bundleList)
+                intent.putExtra("bundlelist",bundle)
+                if(muestreo[position]==names[0]){
+                    intent.putExtra("next",muestreo[position+1])
+                }else if(muestreo[position]==names[names.size-1]){
+                    intent.putExtra("previous",muestreo[position-1])
+                }else{
+                    intent.putExtra("next",names[(names.indexOf(muestreo[position]))+1])
+                    intent.putExtra("previous",names[(names.indexOf(muestreo[position]))-1])
+                }
+                startActivity(intent)
             }
         }
         buscador.setOnClickListener{
