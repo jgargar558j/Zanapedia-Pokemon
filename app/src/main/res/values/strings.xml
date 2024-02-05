@@ -172,4 +172,7 @@
     <string name="pokemon48_Description">Pokémon Insecto</string>
     <string name="pokemon49_Description">Pokémon Polilla venenosa</string>
     <string name="pokemon50_51_Description">Pokémon Topo</string>
+    <string name="pokemon">Pokemon</string>
+    <string name="objetos">Objetos</string>
+    <string name="extras">Extras</string>
 </resources>

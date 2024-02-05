@@ -149,14 +149,15 @@
                 android:layout_weight="3"
                 android:background="@color/black"
                 app:srcCompat="@drawable/iman"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter"
+                tools:ignore="NestedWeights" />
 
             <TextView
                 android:layout_marginTop="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Objetos"
+                android:text="@string/objetos"
                 android:textAlignment="center"/>
         </LinearLayout>
 
@@ -174,24 +175,44 @@
                 android:layout_weight="3"
                 android:background="@color/black"
                 app:srcCompat="@drawable/pokeball3d"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter"
+                tools:ignore="NestedWeights" />
 
             <TextView
                 android:layout_marginTop="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Pokemon"
+                android:text="@string/pokemon"
                 android:textAlignment="center"/>
         </LinearLayout>
 
-        <ImageButton
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/black"
-            app:srcCompat="@drawable/pokeball"
-            android:scaleType="fitCenter" />
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/IBVideo"
+                android:padding="1dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:background="@color/black"
+                app:srcCompat="@drawable/tele"
+                android:scaleType="fitCenter"
+                tools:ignore="NestedWeights"/>
+
+            <TextView
+                android:layout_marginTop="-5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/extras"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

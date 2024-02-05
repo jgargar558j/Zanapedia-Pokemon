@@ -21,6 +21,7 @@ class PrincipalObjeto_Activity : AppCompatActivity() {
     private lateinit var adapter:MyAdapterObjeto
     private lateinit var ibObjetos:ImageButton
     private lateinit var ibPokemon:ImageButton
+    private lateinit var ibVideo: ImageButton
     private lateinit var cbEvolucion:CheckBox
     private lateinit var cbCuracion:CheckBox
     private lateinit var cbPokeballs:CheckBox
@@ -36,6 +37,7 @@ class PrincipalObjeto_Activity : AppCompatActivity() {
         lisObjeto = findViewById(R.id.lisObjetos)
         ibObjetos = findViewById(R.id.IBObjetos)
         ibPokemon = findViewById(R.id.IBPokemon)
+        ibVideo = findViewById(R.id.IBVideo)
 
         cbEvolucion = findViewById(R.id.CBEvolucion)
         cbCuracion = findViewById(R.id.CBCuracion)
@@ -49,6 +51,10 @@ class PrincipalObjeto_Activity : AppCompatActivity() {
         }
         ibPokemon.setOnClickListener {
             val intent = Intent(this,Principal_Activity::class.java)
+            startActivity(intent)
+        }
+        ibVideo.setOnClickListener {
+            val intent = Intent(this,VideoViewActivity::class.java)
             startActivity(intent)
         }
 
