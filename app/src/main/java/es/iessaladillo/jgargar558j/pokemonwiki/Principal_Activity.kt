@@ -110,6 +110,9 @@ class Principal_Activity : AppCompatActivity() {
 
     @SuppressLint("ResourceType")
     fun initializeList(){
+        //Anotaciones:
+        //  - Necesario hacer la lista de este modo dado a que si se hace de forma "automática" salta una excepción de exceso de memoria.
+        //  - Necesario establecer el _idString (copia del id necesaria para establecer diferentes situaciones a través del bundle con el intent) sin estar en la carpeta resources dado a que si no necesitariamos un método virtual que más tarde dará error.
         val pokemon = Pokemon(R.integer.pokemon1Id,getString(R.string.pokemon1Name),getString(R.string.pokemon1_2_3_Description),R.drawable.pokemon1,R.drawable.planta,R.drawable.veneno,R.drawable.pokemon1variocolor,"1")
         val pokemon2 = Pokemon(R.integer.pokemon2Id,getString(R.string.pokemon2Name),getString(R.string.pokemon1_2_3_Description),R.drawable.pokemon2,R.drawable.planta,R.drawable.veneno,R.drawable.pokemon2variocolor,"2")
         val pokemon3 = Pokemon(R.integer.pokemon3Id,getString(R.string.pokemon3Name),getString(R.string.pokemon1_2_3_Description),R.drawable.pokemon3,R.drawable.planta,R.drawable.veneno,R.drawable.pokemon3variocolor,"3")
@@ -150,10 +153,24 @@ class Principal_Activity : AppCompatActivity() {
         val pokemon38 = Pokemon(R.integer.pokemon38Id,getString(R.string.pokemon38Name),getString(R.string.pokemon37_38_Description),R.drawable.pokemon38,R.drawable.fuego,R.drawable.vacio,R.drawable.pokemon38variocolor,"38")
         val pokemon39 = Pokemon(R.integer.pokemon39Id,getString(R.string.pokemon39Name),getString(R.string.pokemon39_40_Description),R.drawable.pokemon39,R.drawable.normal,R.drawable.vacio,R.drawable.pokemon39variocolor,"39")
         val pokemon40 = Pokemon(R.integer.pokemon40Id,getString(R.string.pokemon40Name),getString(R.string.pokemon39_40_Description),R.drawable.pokemon40,R.drawable.normal,R.drawable.vacio,R.drawable.pokemon40variocolor,"40")
+        val pokemon41 = Pokemon(R.integer.pokemon41Id,getString(R.string.pokemon41Name),getString(R.string.pokemon41_42_Description),R.drawable.pokemon41,R.drawable.veneno,R.drawable.volador,R.drawable.pokemon41variocolor,"41")
+        val pokemon42 = Pokemon(R.integer.pokemon42Id,getString(R.string.pokemon42Name),getString(R.string.pokemon41_42_Description),R.drawable.pokemon42,R.drawable.veneno,R.drawable.volador,R.drawable.pokemon42variocolor,"42")
+        val pokemon43 = Pokemon(R.integer.pokemon43Id,getString(R.string.pokemon43Name),getString(R.string.pokemon43_44_Description),R.drawable.pokemon43,R.drawable.planta,R.drawable.veneno,R.drawable.pokemon43variocolor,"43")
+        val pokemon44 = Pokemon(R.integer.pokemon44Id,getString(R.string.pokemon44Name),getString(R.string.pokemon43_44_Description),R.drawable.pokemon44,R.drawable.planta,R.drawable.veneno,R.drawable.pokemon44variocolor,"44")
+        val pokemon45 = Pokemon(R.integer.pokemon45Id,getString(R.string.pokemon45Name),getString(R.string.pokemon45_Description),R.drawable.pokemon45,R.drawable.planta,R.drawable.veneno,R.drawable.pokemon45variocolor,"45")
+        val pokemon46 = Pokemon(R.integer.pokemon46Id,getString(R.string.pokemon46Name),getString(R.string.pokemon46_47_Description),R.drawable.pokemon46,R.drawable.bicho,R.drawable.planta,R.drawable.pokemon46variocolor,"46")
+        val pokemon47 = Pokemon(R.integer.pokemon47Id,getString(R.string.pokemon47Name),getString(R.string.pokemon46_47_Description),R.drawable.pokemon47,R.drawable.bicho,R.drawable.planta,R.drawable.pokemon47variocolor,"47")
+        val pokemon48 = Pokemon(R.integer.pokemon48Id,getString(R.string.pokemon48Name),getString(R.string.pokemon48_Description),R.drawable.pokemon48,R.drawable.bicho,R.drawable.veneno,R.drawable.pokemon48variocolor,"48")
+        val pokemon49 = Pokemon(R.integer.pokemon49Id,getString(R.string.pokemon49Name),getString(R.string.pokemon49_Description),R.drawable.pokemon49,R.drawable.bicho,R.drawable.veneno,R.drawable.pokemon49variocolor,"49")
+        val pokemon50 = Pokemon(R.integer.pokemon50Id,getString(R.string.pokemon50Name),getString(R.string.pokemon50_51_Description),R.drawable.pokemon50,R.drawable.tierra,R.drawable.vacio,R.drawable.pokemon50variocolor,"50")
+        val pokemon51 = Pokemon(R.integer.pokemon51Id,getString(R.string.pokemon51Name),getString(R.string.pokemon50_51_Description),R.drawable.pokemon51,R.drawable.tierra,R.drawable.vacio,R.drawable.pokemon51variocolor,"51")
+
         names = mutableListOf(pokemon,pokemon2,pokemon3,pokemon4,pokemon5,pokemon6,pokemon7,pokemon8,pokemon9,pokemon10,
             pokemon11,pokemon12,pokemon13,pokemon14,pokemon15,pokemon16,pokemon17,pokemon18,pokemon19,pokemon20,
             pokemon21,pokemon22,pokemon23,pokemon24,pokemon25,pokemon26,pokemon27,pokemon28,pokemon29,pokemon30,
-            pokemon31,pokemon32,pokemon33,pokemon34,pokemon35,pokemon36,pokemon37,pokemon38,pokemon39,pokemon40)
+            pokemon31,pokemon32,pokemon33,pokemon34,pokemon35,pokemon36,pokemon37,pokemon38,pokemon39,pokemon40,
+            pokemon41,pokemon42,pokemon43,pokemon44,pokemon45,pokemon46,pokemon47,pokemon48,pokemon49,pokemon50,
+            pokemon51)
     }
 
 }

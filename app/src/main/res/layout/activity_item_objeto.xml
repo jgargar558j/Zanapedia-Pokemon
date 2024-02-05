@@ -27,17 +27,20 @@
         android:id="@+id/TVnombreObjeto" app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="10dp" android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
         app:layout_constraintStart_toEndOf="@+id/IVObjetoObjeto" android:textStyle="bold"/>
+
     <TextView
-        android:text="Descripcion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/TVdescripcionObjeto"
-        android:textColor="@color/black"
-        android:fontFamily="@font/peach"
-        android:textSize="13.5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="-4dp"
-        app:layout_constraintTop_toBottomOf="@+id/TVnombreObjeto" android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@+id/IVObjetoObjeto"
-        />
+        android:fontFamily="@font/peach"
+        android:text="Descripcion"
+        android:textColor="@color/black"
+        android:textSize="13.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/IVObjetoObjeto"
+        app:layout_constraintTop_toBottomOf="@+id/TVnombreObjeto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

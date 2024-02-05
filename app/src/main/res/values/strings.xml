@@ -1,4 +1,93 @@
 <resources>
+
+    // Nombres y descripción de poke balls.
+
+    <string name="PokeBall">Poké Ball</string>
+    <string name="PokeBallDescription">La Ball más común para atrapar POKéMON</string>
+
+    <string name="Superball">Superball</string>
+    <string name="SuperballDescription">Es buena. Tiene más índice de éxito que la Poké ball</string>
+
+    <string name="Ultraball">Ultraball</string>
+    <string name="UltraballDescription">Es muy buena. Tiene más índice de éxito que la Superball</string>
+
+    <string name="MasterBall">Master Ball</string>
+    <string name="MasterBallDescription">Es la mejor. Atrapa siempre al pokémon</string>
+
+    <string name="HonorBall">Honor Ball</string>
+    <string name="HonorBallDescription">Es muy particular. Se hizo para conmemorar algo. Su efectividad es igual a la de una Poké ball</string>
+
+    <string name="AcopioBall">AcopioBall</string>
+    <string name="AcopioBallDescription">Ball efectiva con los POKéMONs que son iguales a los que ya tienes</string>
+
+    <string name="LujoBall">Lujo Ball</string>
+    <string name="LujoBallDescription">El pokémon capturado con esta ball tendrá un alto nivel de felicidad</string>
+
+    <string name="MallaBall">Malla Ball</string>
+    <string name="MallaBallDescription">Ball efectiva con los POKéMONs de tipo Agua y Bicho</string>
+
+    <string name="NidoBall">Nido Ball</string>
+    <string name="NidoBallDescription">Ball efectiva con los pokémon de menor nivel a los del usuario</string>
+
+    <string name="TurnoBall">Turno Ball</string>
+    <string name="TurnoBallDescription">Ball efectiva para combates largos</string>
+
+    <string name="SafariBall">Safari Ball</string>
+    <string name="SafariBallDescription">Ball exclusiva para atrapar POKéMON de la Zona Safari</string>
+
+    // Nombre y descripción de objetos evolutivos.
+
+    <string name="PiedraAgua">Piedra Agua</string>
+    <string name="PiedraAguaDescription">Evoluciona a Poliwhirl, Shellder, Staryu, Eevee</string>
+
+    <string name="PiedraFuego">Piedra Fuego</string>
+    <string name="PiedraFuegoDescription">Evoluciona a Vulpix, Growlithe e Eevee</string>
+
+    <string name="PiedraHoja">Piedra Hoja</string>
+    <string name="PiedraHojaDescription">Evoluciona a Gloom, Weepinbell y Exeggcute</string>
+
+    <string name="PiedraLunar">Piedra Lunar</string>
+    <string name="PiedraLunarDescription">Evoluciona a Nidorina, Nidorino, Clefairy y Jigglypuff</string>
+
+    <string name="Piedratrueno">Piedra Trueno</string>
+    <string name="PiedratruenoDescription">Evoluciona a Pikachu e Eevee</string>
+
+    // Nombre y descripción de objetos de curación.
+
+    <string name="Pocion">Poción</string>
+    <string name="PocionDescription">Restaura 20 PS a un POKéMON</string>
+
+    <string name="Superpocion">Superpoción</string>
+    <string name="SuperpocionDescription">Restaura 50 PS a un POKéMON</string>
+
+    <string name="MaximaPocion">Máxima Poción</string>
+    <string name="MaximaPocionDescription">Restaura todos los PS de un POKéMON</string>
+
+    <string name="CuraTotal">Cura Total</string>
+    <string name="CuraTotalDescription">Cura cualquier problema de estado</string>
+
+    <string name="AguaFresca">Agua Fresca</string>
+    <string name="AguaFrescaDescription">Agua mineral que restaura 50 PS</string>
+
+    <string name="Antidoto">Antídoto</string>
+    <string name="AntidotoDescription">Cura a un POKéMON envenenado</string>
+
+    <string name="Antihielo">Antihielo</string>
+    <string name="AntihieloDescription">Cura a un POKéMON congelado</string>
+
+    <string name="Antiparaliz">Antiparaliz</string>
+    <string name="AntiparalizDescription">Cura a un POKéMON paralizado</string>
+
+    <string name="Antiquemar">Antiquemar</string>
+    <string name="AntiquemarDescription">Cura a un POKéMON quemado</string>
+
+    <string name="Despertar">Despertar</string>
+    <string name="DespertarDescription">Despierta a un POKéMON dormido</string>
+
+    <string name="Revivir">Revivir</string>
+    <string name="RevivirDescription">Revive a un POKéMON debilitado con la mitad de sus PS máximos</string>
+
+    // Nombres de pokemon.
     <string name="app_name">ZanaPedia Pokemon</string>
     <string name="pokemon1Name">Bulbasaur</string>
     <string name="pokemon2Name">Ivysaur</string>
@@ -40,6 +129,20 @@
     <string name="pokemon38Name">Ninetales</string>
     <string name="pokemon39Name">Jigglypuff</string>
     <string name="pokemon40Name">Wigglytuff</string>
+    <string name="pokemon41Name">Zubat</string>
+    <string name="pokemon42Name">Golbat</string>
+    <string name="pokemon43Name">Oddish</string>
+    <string name="pokemon44Name">Gloom</string>
+    <string name="pokemon45Name">Vileplume</string>
+    <string name="pokemon46Name">Paras</string>
+    <string name="pokemon47Name">Parasect</string>
+    <string name="pokemon48Name">Venonat</string>
+    <string name="pokemon49Name">Venomoth</string>
+    <string name="pokemon50Name">Diglett</string>
+    <string name="pokemon51Name">Dugtrio</string>
+
+    // Descripciones de pokemon (hay muchas que son iguales por los que se les determina un mismo
+    contenedor de descripción).
     <string name="pokemon1_2_3_Description">Pokémon Semilla</string>
     <string name="pokemon4_Description">Pokémon Lagartija</string>
     <string name="pokemon5_6_Description">Pokémon Llama</string>
@@ -62,4 +165,11 @@
     <string name="pokemon35_36_Description">Pokémon Hada</string>
     <string name="pokemon37_38_Description">Pokémon Zorro</string>
     <string name="pokemon39_40_Description">Pokémon Globo</string>
+    <string name="pokemon41_42_Description">Pokémon Murciélago</string>
+    <string name="pokemon43_44_Description">Pokémon Hierbajo</string>
+    <string name="pokemon45_Description">Pokémon Flor</string>
+    <string name="pokemon46_47_Description">Pokémon Hongo</string>
+    <string name="pokemon48_Description">Pokémon Insecto</string>
+    <string name="pokemon49_Description">Pokémon Polilla venenosa</string>
+    <string name="pokemon50_51_Description">Pokémon Topo</string>
 </resources>

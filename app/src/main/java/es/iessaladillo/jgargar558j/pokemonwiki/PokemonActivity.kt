@@ -30,7 +30,6 @@ class PokemonActivity : AppCompatActivity() {
     var next: Pokemon? = null
     var previous: Pokemon? = null
     lateinit var pokedex:ArrayList<Pokemon>
-    lateinit var pokedexNueva:ArrayList<Pokemon>
 
     @SuppressLint("SetTextI18n", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {

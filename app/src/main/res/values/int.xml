@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="totalNumberOfPokemonInPokedex">40</integer>
+    <integer name="totalNumberOfPokemonInPokedex">51</integer>
+    <integer name="totalNumberOfObjectsPokeball">11</integer>
 
+    // Tipos
     <integer name="TipoCuracion">1</integer>
     <integer name="TipoEvolucion">2</integer>
+    <integer name="TipoPokeball">3</integer>
+
+    // Id Objetos
+    <integer name="objeto1Id">1</integer>
+    <integer name="objeto2Id">2</integer>
+    <integer name="objeto3Id">3</integer>
+    <integer name="objeto4Id">4</integer>
+    <integer name="objeto5Id">5</integer>
+    <integer name="objeto6Id">6</integer>
+    <integer name="objeto7Id">7</integer>
+    <integer name="objeto8Id">8</integer>
+    <integer name="objeto9Id">9</integer>
+    <integer name="objeto10Id">10</integer>
+    <integer name="objeto11Id">11</integer>
+    <integer name="objeto12Id">12</integer>
+    <integer name="objeto13Id">13</integer>
+    <integer name="objeto14Id">14</integer>
+    <integer name="objeto15Id">15</integer>
+    <integer name="objeto16Id">16</integer>
+    <integer name="objeto17Id">17</integer>
+    <integer name="objeto18Id">18</integer>
+    <integer name="objeto19Id">19</integer>
+    <integer name="objeto20Id">20</integer>
+    <integer name="objeto21Id">21</integer>
+    <integer name="objeto22Id">22</integer>
+    <integer name="objeto23Id">23</integer>
+    <integer name="objeto24Id">24</integer>
+    <integer name="objeto25Id">25</integer>
+    <integer name="objeto26Id">26</integer>
+    <integer name="objeto27Id">27</integer>
+
     // Id Pokemon
     <integer name="pokemon1Id">1</integer>
     <integer name="pokemon2Id">2</integer>
@@ -45,5 +78,16 @@
     <integer name="pokemon38Id">38</integer>
     <integer name="pokemon39Id">39</integer>
     <integer name="pokemon40Id">40</integer>
+    <integer name="pokemon41Id">41</integer>
+    <integer name="pokemon42Id">42</integer>
+    <integer name="pokemon43Id">43</integer>
+    <integer name="pokemon44Id">44</integer>
+    <integer name="pokemon45Id">45</integer>
+    <integer name="pokemon46Id">46</integer>
+    <integer name="pokemon47Id">47</integer>
+    <integer name="pokemon48Id">48</integer>
+    <integer name="pokemon49Id">49</integer>
+    <integer name="pokemon50Id">50</integer>
+    <integer name="pokemon51Id">51</integer>
 
 </resources>
