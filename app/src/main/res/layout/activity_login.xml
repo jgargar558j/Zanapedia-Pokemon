@@ -166,13 +166,14 @@
         app:layout_constraintTop_toBottomOf="@+id/ETContrasena" />
 
     <Button
+        style="@style/Boton"
         android:id="@+id/BTEntrar"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/FondoDePantalla"
         android:text="Entrar"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/CVCalendario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -23,6 +23,7 @@ class Principal_Activity : AppCompatActivity() {
     private lateinit var ibPokemon:ImageButton
     private var isSet:Boolean = false
     private lateinit var ibVideo:ImageButton
+    private lateinit var ibPerfil:ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ class Principal_Activity : AppCompatActivity() {
     private fun initializeVariables(){
         initializeList()
 
+        ibPerfil = findViewById(R.id.IBPerfil)
         ibVideo = findViewById(R.id.IBVideo)
         ibObjetos = findViewById(R.id.IBObjetos)
         ibPokemon = findViewById(R.id.IBPokemon)
@@ -110,6 +112,10 @@ class Principal_Activity : AppCompatActivity() {
         }
         ibVideo.setOnClickListener {
             val intent = Intent(this,VideoViewActivity::class.java)
+            startActivity(intent)
+        }
+        ibPerfil.setOnClickListener {
+            val intent = Intent(this,PerfilActivity::class.java)
             startActivity(intent)
         }
     }
