@@ -175,4 +175,26 @@
     <string name="pokemon">Pokemon</string>
     <string name="objetos">Objetos</string>
     <string name="extras">Extras</string>
+
+    <string-array name="pokemonFavorito">
+        <item>Charmander</item>
+        <item>Squirtle</item>
+        <item>Bulbasaur</item>
+    </string-array>
+    <string-array name="tipoFavorito">
+        <item>Fuego</item>
+        <item>Agua</item>
+        <item>Planta</item>
+        <item>Acero</item>
+        <item>Hielo</item>
+        <item>Electrico</item>
+        <item>Lucha</item>
+        <item>Fantasma</item>
+        <item>Psiquico</item>
+        <item>Dragon</item>
+        <item>Tierra</item>
+        <item>Roca</item>
+        <item>Veneno</item>
+        <item>Volador</item>
+    </string-array>
 </resources>

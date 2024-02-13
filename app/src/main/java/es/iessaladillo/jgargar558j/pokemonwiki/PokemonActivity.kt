@@ -1,5 +1,6 @@
 package es.iessaladillo.jgargar558j.pokemonwiki
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.lang.reflect.Modifier
 
@@ -58,9 +60,40 @@ class PokemonActivity : AppCompatActivity() {
         swVarioColor.setOnClickListener {
             var switchState:Boolean = swVarioColor.isChecked
             if (switchState){
-                ivPokemon.setImageResource(pokemon.imagenVariocolor)
+                ivPokemon.setImageResource(R.drawable.vacio)
+                val drawable = ContextCompat.getDrawable(this, pokemon.imagenVariocolor)
+                ivPokemon.background = drawable
+
+                val animator = ObjectAnimator.ofInt(
+                    ivPokemon.background,
+                    "alpha",
+                    0,
+                    255
+                )
+                animator.duration = 3000 // Duración de la animación en milisegundos
+                animator.start()
+
+                ObjectAnimator.ofInt(tvNombre,"textColor", ContextCompat.getColor(this, R.color.Verde)).apply {
+                    duration = 200
+                    start()
+                }
             }else{
-                ivPokemon.setImageResource(pokemon.imagen)
+                ivPokemon.setImageResource(R.drawable.vacio)
+                val drawable = ContextCompat.getDrawable(this, pokemon.imagen)
+                ivPokemon.background = drawable
+
+                val animator = ObjectAnimator.ofInt(
+                    ivPokemon.background,
+                    "alpha",
+                    0,
+                    255
+                )
+                animator.duration = 3000 // Duración de la animación en milisegundos
+                animator.start()
+                ObjectAnimator.ofInt(tvNombre,"textColor", ContextCompat.getColor(this, R.color.black)).apply {
+                    duration = 200
+                    start()
+                }
             }
         }
 

@@ -260,7 +260,6 @@
         app:layout_constraintTop_toBottomOf="@+id/IVPokeballLeft" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:backgroundTint="@color/black"
         android:tint="@color/white"
         android:id="@+id/FABVolver"
         android:layout_width="wrap_content"

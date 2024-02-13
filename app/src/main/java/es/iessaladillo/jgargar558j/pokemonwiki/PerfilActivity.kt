@@ -1,14 +1,21 @@
 package es.iessaladillo.jgargar558j.pokemonwiki
 
+import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.ImageButton
+import android.widget.MultiAutoCompleteTextView
+import android.widget.MultiAutoCompleteTextView.CommaTokenizer
 import android.widget.NumberPicker
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 
 class PerfilActivity : AppCompatActivity() {
@@ -20,6 +27,11 @@ class PerfilActivity : AppCompatActivity() {
     private lateinit var ibVideo: ImageButton
     private lateinit var tvRating:TextView
     private lateinit var sbBarra:SeekBar
+    private lateinit var actvPokemonFavorito:AutoCompleteTextView
+    private lateinit var pokemons: Array<String?>
+    private lateinit var tipos1: Array<String?>
+    private lateinit var mactvTiposFavoritos:MultiAutoCompleteTextView
+    private lateinit var arrayAdapter:ArrayAdapter<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
@@ -27,6 +39,9 @@ class PerfilActivity : AppCompatActivity() {
         initializeVariables()
     }
     fun initializeVariables(){
+        pokemons = resources.getStringArray(R.array.pokemonFavorito)
+        tipos1 = resources.getStringArray(R.array.tipoFavorito)
+        mactvTiposFavoritos = findViewById(R.id.MACTVTiposFavoritos)
         sbBarra = findViewById(R.id.SBBarra)
         tvRating = findViewById(R.id.TVRating)
         tbImagenPerfil = findViewById(R.id.TBImagenPerfil)
@@ -35,6 +50,13 @@ class PerfilActivity : AppCompatActivity() {
         ibVideo = findViewById(R.id.IBVideo)
         ibObjetos = findViewById(R.id.IBObjetos)
         ibPokemon = findViewById(R.id.IBPokemon)
+        actvPokemonFavorito = findViewById(R.id.ACTVPokemonFavorito)
+
+        arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,tipos1)
+        mactvTiposFavoritos.threshold = 1
+        mactvTiposFavoritos.setTokenizer(CommaTokenizer())
+        mactvTiposFavoritos.setAdapter(arrayAdapter)
+
         npNumero.minValue = 0
         npNumero.maxValue = 10
         npNumero.wrapSelectorWheel = true
@@ -56,11 +78,23 @@ class PerfilActivity : AppCompatActivity() {
         })
         tbImagenPerfil.setOnClickListener {
             if(tbImagenPerfil.isChecked){
-                tbImagenPerfil.setBackgroundResource(R.drawable.perfil)
-            }else{
                 tbImagenPerfil.setBackgroundResource(R.drawable.pokeballobjeto)
+                ObjectAnimator.ofInt(tvRating,"textColor",ContextCompat.getColor(this, R.color.purple_700)).apply {
+                    duration = 500
+                    start()
+                }
+            }else{
+                tbImagenPerfil.setBackgroundResource(R.drawable.perfil)
+                ObjectAnimator.ofInt(tvRating,"textColor",ContextCompat.getColor(this, R.color.black)).apply {
+                    duration = 500
+                    start()
+                }
             }
         }
+        ArrayAdapter(this, android.R.layout.simple_list_item_1, pokemons).also { adapter ->
+            actvPokemonFavorito.setAdapter(adapter)
+        }
+
         ibObjetos.setOnClickListener {
             val intent = Intent(this,PrincipalObjeto_Activity::class.java)
             startActivity(intent)
