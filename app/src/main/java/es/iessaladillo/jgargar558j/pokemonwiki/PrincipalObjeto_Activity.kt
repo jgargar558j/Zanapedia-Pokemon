@@ -12,6 +12,9 @@ import android.widget.ImageButton
 import android.widget.ListView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+/**
+ * Esta clase representa la actividad principal de la aplicación aquí se encontrarán la lista principal de objetos, unos checkbox y donde se desarrolla el mayor porcentaje de la aplicación.
+ */
 class PrincipalObjeto_Activity : AppCompatActivity() {
 
     private lateinit var objects:MutableList<Objeto>
@@ -26,12 +29,20 @@ class PrincipalObjeto_Activity : AppCompatActivity() {
     private lateinit var cbCuracion:CheckBox
     private lateinit var cbPokeballs:CheckBox
 
+    /**
+     * Método llamado cuando se crea la actividad. Se encarga de inicializar la interfaz de usuario
+     * y cargar los datos de los objetos de la lista.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal_objeto)
         initializeVariables()
     }
 
+    /**
+     * Inicializa las variables de la actividad PrincipalObjeto_Activity, asignando las vistas del layout a
+     * las correspondientes propiedades de la actividad.
+     */
     private fun initializeVariables(){
         initializeList()
         lisObjeto = findViewById(R.id.lisObjetos)
@@ -45,36 +56,65 @@ class PrincipalObjeto_Activity : AppCompatActivity() {
 
         adapter = MyAdapterObjeto(this,muestreo)
         lisObjeto.adapter = adapter
+
+        botonesNavegacion()
+
+        checkboxClicked()
+    }
+
+    /**
+     * Configura los listeners de clic para los botones de navegación.
+     */
+    fun botonesNavegacion(){
+        // Listener para el botón de la vista de objetos
         ibObjetos.setOnClickListener {
             val intent = Intent(this,PrincipalObjeto_Activity::class.java)
             startActivity(intent)
         }
+        // Listener para el botón de la vista de Pokémon
         ibPokemon.setOnClickListener {
             val intent = Intent(this,Principal_Activity::class.java)
             startActivity(intent)
         }
+        // Listener para el botón de la vista de los extras
         ibVideo.setOnClickListener {
             val intent = Intent(this,VideoViewActivity::class.java)
             startActivity(intent)
         }
+    }
 
+    /**
+     * Asigna los listeners de clic a los CheckBox de la interfaz de usuario.
+     */
+    fun checkboxClicked(){
+        // Listener para el CheckBox de Evolución
         cbEvolucion.setOnClickListener{
             onCheckboxClicked(cbEvolucion)
         }
+        // Listener para el CheckBox de Pokeballs
         cbPokeballs.setOnClickListener{
             onCheckboxClicked(cbPokeballs)
         }
+        // Listener para el CheckBox de Curación
         cbCuracion.setOnClickListener{
             onCheckboxClicked(cbCuracion)
         }
     }
 
+    /**
+     * Maneja los clics en los CheckBox.
+     *
+     * @param view La vista que se ha hecho clic.
+     */
     @SuppressLint("ResourceType")
     fun onCheckboxClicked(view: View) {
+
+        // Comprueba si la vista clicada es un CheckBox
         if (view is CheckBox) {
             val checked: Boolean = view.isChecked
             busqueda.clear()
 
+            // Maneja cada CheckBox individualmente
             when (view.id) {
                 R.id.CBCuracion -> {
                     if (checked) {
@@ -137,6 +177,9 @@ class PrincipalObjeto_Activity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Inicializa la lista de objetos con los datos de los objetos que existen en la aplicación.
+     */
     private fun initializeList(){
         var objeto = Objeto(R.integer.objeto1Id,getString(R.string.PokeBall),getString(R.string.PokeBallDescription),R.drawable.pokeballobjeto,R.integer.TipoPokeball)
         var objeto2 = Objeto(R.integer.objeto2Id,getString(R.string.Superball),getString(R.string.SuperballDescription),R.drawable.superball,R.integer.TipoPokeball)

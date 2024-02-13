@@ -9,6 +9,9 @@ import android.widget.ImageButton
 import android.widget.ListView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+/**
+ * Esta clase representa la actividad principal de la aplicación aquí se encontrarán la lista principal de Pokemon, un buscador y donde se desarrolla el mayor porcentaje de la aplicación.
+ */
 class Principal_Activity : AppCompatActivity() {
 
     private lateinit var lisPokemon:ListView
@@ -25,6 +28,10 @@ class Principal_Activity : AppCompatActivity() {
     private lateinit var ibVideo:ImageButton
     private lateinit var ibPerfil:ImageButton
 
+    /**
+     * Método llamado cuando se crea la actividad. Se encarga de inicializar la interfaz de usuario
+     * y cargar los datos de los Pokemon de la lista.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
@@ -32,6 +39,10 @@ class Principal_Activity : AppCompatActivity() {
         initializeVariables()
     }
 
+    /**
+     * Inicializa las variables de la actividad PrincipalActivity, asignando las vistas del layout a
+     * las correspondientes propiedades de la actividad.
+     */
     @SuppressLint("ResourceType")
     private fun initializeVariables(){
         initializeList()
@@ -47,24 +58,51 @@ class Principal_Activity : AppCompatActivity() {
         adapter = MyAdapter(this,muestreo)
         lisPokemon.adapter = adapter
 
+        listaPokemonFuncion()
+        buscador()
+
+        botonesDeNavegacion()
+    }
+
+    /**
+     * Configura el listener de clic para los elementos de la lista de Pokémon.
+     */
+    @SuppressLint("ResourceType")
+    fun listaPokemonFuncion(){
         lisPokemon.setOnItemClickListener { parent,view,position,id ->
+
+            // Verifica si la lista de Pokémon está filtrada o no
             if (!isSet){
+
+                // Si no está filtrada, crea un intent para iniciar la actividad PokemonActivity
                 val intent = Intent(this,PokemonActivity::class.java)
+
+                // Agrega el Pokémon seleccionado como extra al intent
                 intent.putExtra("pokemon", names[position])
+
+                // Crea un bundle para pasar la lista completa de Pokémon como serializable al intent
                 var bundle = Bundle()
                 var bundleList:ArrayList<Pokemon> = ArrayList(names)
                 bundle.putSerializable("fPokemon",bundleList)
                 intent.putExtra("bundlelist",bundle)
+
+                // Verifica si el Pokémon seleccionado es el primero en la lista
                 if(names[position]==names[0]){
+                    // Si es el primero, agrega el siguiente Pokémon como extra al intent
                     intent.putExtra("next",names[position+1])
                 }else if(names[position]==names[getString(R.integer.totalNumberOfPokemonInPokedex).toInt()-1]){
+                    // Si es el último, agrega el Pokémon anterior como extra al intent
                     intent.putExtra("previous",names[position-1])
                 }else{
+                    // Si no es el primero ni el último, agrega tanto el siguiente como el anterior Pokémon como extras al intent
                     intent.putExtra("next",names[position+1])
                     intent.putExtra("previous",names[position-1])
                 }
+                // Inicia la actividad
                 startActivity(intent)
+
             }else{
+                // Si la lista está filtrada, realiza la misma lógica pero con la lista filtrada (muestreo)
                 val intent = Intent(this,PokemonActivity::class.java)
                 intent.putExtra("pokemon",muestreo[position])
                 var bundle=Bundle()
@@ -82,6 +120,16 @@ class Principal_Activity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+    }
+
+    /**
+     * Configura el listener de clic para el botón de búsqueda.
+     * Limpia las listas de muestra y de búsqueda, y realiza una búsqueda en la lista de Pokémon según el texto ingresado en el EditText.
+     * Si se encuentra alguna coincidencia, se actualiza la lista de muestra con los resultados de la búsqueda.
+     * Si no se encuentra ninguna coincidencia, se restaura la lista de muestra con todos los Pokémon.
+     * Finalmente, se notifica al adaptador que los datos han cambiado.
+     */
+    fun buscador(){
         buscador.setOnClickListener{
             muestreo.clear()
             busqueda.clear()
@@ -102,24 +150,37 @@ class Principal_Activity : AppCompatActivity() {
             }
             adapter.notifyDataSetChanged()
         }
+    }
+
+    /**
+     * Configura los listeners de clic para los botones de navegación.
+     */
+    fun botonesDeNavegacion(){
+        // Listener para el botón de la vista de objetos
         ibObjetos.setOnClickListener {
             val intent = Intent(this,PrincipalObjeto_Activity::class.java)
             startActivity(intent)
         }
+        // Listener para el botón de la vista de Pokémon
         ibPokemon.setOnClickListener {
             val intent = Intent(this,Principal_Activity::class.java)
             startActivity(intent)
         }
+        // Listener para el botón de la vista de los extras
         ibVideo.setOnClickListener {
             val intent = Intent(this,VideoViewActivity::class.java)
             startActivity(intent)
         }
+        // Listener para el botón de la vista del perfil
         ibPerfil.setOnClickListener {
             val intent = Intent(this,PerfilActivity::class.java)
             startActivity(intent)
         }
     }
 
+    /**
+     * Inicializa la lista de Pokémon con los datos de los Pokémon que existen en la aplicación.
+     */
     @SuppressLint("ResourceType")
     fun initializeList(){
         //Anotaciones:
