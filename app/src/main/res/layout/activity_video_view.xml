@@ -5,37 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VideoViewActivity"
-    android:background="#F5DEB3">
+    android:background="@color/FondoClaro">
 
+    <!-- Views decorativos de la aplicación. -->
     <View
         android:id="@+id/view"
         android:layout_width="5dp"
         android:layout_height="match_parent"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         tools:ignore="MissingConstraints" />
-
     <View
         android:id="@+id/view8"
         android:layout_width="5dp"
         android:layout_height="match_parent"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         tools:ignore="MissingConstraints" />
-
     <View
         android:id="@+id/view4"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints" />
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/Burdeo"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints" />
 
+    <!-- Parte de arriba de la aplicación, decorativa. -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -49,7 +56,6 @@
             android:layout_weight="1"
             android:background="@color/black"
             android:src="@drawable/pokeball" />
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -57,11 +63,10 @@
             android:background="@color/black"
             android:fontFamily="@font/pokemon"
             android:letterSpacing="0.2"
-            android:text="POKEWIKI"
+            android:text="@string/pokewiki"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="37sp" />
-
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -70,21 +75,14 @@
             android:src="@drawable/pokeball" />
     </LinearLayout>
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#8F0000"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:ignore="MissingConstraints" />
-
+    <!-- Vistas que muestran un video sobre le combate Pokemon en la actualidad con una barra de progreso y una vista donde lleva a una página web que habla sobre noticias de Pokemon -->
     <TextView
         android:id="@+id/TVTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/pokemon"
         android:letterSpacing="0.1"
-        android:text="Actualidad"
+        android:text="@string/actualidad"
         android:textColor="@color/black"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -93,7 +91,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:ignore="MissingConstraints" />
-
     <VideoView
         android:id="@+id/VVTrailer"
         android:layout_width="300dp"
@@ -113,7 +110,7 @@
         app:layout_constraintBottom_toTopOf="@+id/WVPagina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
+    <!-- Barra para establecer si te ha gustado la noticia expuesta o no. -->
     <RatingBar
         android:background="@color/FondoDePantalla"
         android:id="@+id/simpleRatingBar"
@@ -122,7 +119,6 @@
         app:layout_constraintBottom_toTopOf="@+id/LLbajo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
     <WebView
         android:id="@+id/WVPagina"
         android:layout_width="380dp"
@@ -133,6 +129,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/VVTrailer" />
 
+    <!-- Vista que contiene los LinearLayout dispuestos para los 3 botones que te lanzan a las diferentes vistas de la aplicación. -->
     <LinearLayout
         android:id="@+id/LLbajo"
         android:layout_width="match_parent"
@@ -159,7 +156,6 @@
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/iman"
                 tools:ignore="NestedWeights" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -186,7 +182,6 @@
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/pokeball3d"
                 tools:ignore="NestedWeights" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -213,7 +208,6 @@
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/tele"
                 tools:ignore="NestedWeights" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -222,7 +216,6 @@
                 android:text="@string/extras"
                 android:textAlignment="center" />
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

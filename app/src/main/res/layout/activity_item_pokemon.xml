@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".item_pokemon"
-    android:background="#F5DEB3">
+    android:background="@color/FondoClaro">
 
+    <!-- Imagen del pokemon que se cambiará gracias al adaptador.-->
     <ImageView
         android:id="@+id/IVpokemon"
         android:layout_width="64dp"
@@ -16,8 +17,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_background" />
+    <!-- Nombre del pokemon que se cambiará gracias al adaptador.-->
     <TextView
-        android:text="TextView"
+        android:text="@string/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
@@ -25,9 +27,10 @@
         android:textColor="@color/black"
         android:letterSpacing="0.1"
         android:id="@+id/TVnombre" app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="10dp" android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintStart_toEndOf="@+id/IVpokemon" android:textStyle="bold"/>
-
+    <!-- Descripción del pokemon que se cambiará gracias al adaptador.-->
     <TextView
         android:id="@+id/TVdescripcion"
         android:layout_width="match_parent"
@@ -36,9 +39,9 @@
         android:layout_marginEnd="35dp"
         android:layout_marginTop="-4dp"
         android:fontFamily="@font/peach"
-        android:text="Descripcion"
+        android:text="@string/descripcion"
         android:textColor="@color/black"
-        android:textSize="13.5dp"
+        android:textSize="13.5sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/IVpokemon"
         app:layout_constraintTop_toBottomOf="@+id/TVnombre" />

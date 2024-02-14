@@ -5,43 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:background="#F5DEB3">
+    android:background="@color/FondoClaro">
 
+    <!-- Views decorativos de la aplicación. -->
     <View
         android:id="@+id/view"
         android:layout_width="5dp"
         android:layout_height="match_parent"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         tools:ignore="MissingConstraints" />
     <View
         android:layout_width="5dp"
         android:layout_height="match_parent"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         tools:ignore="MissingConstraints" />
-
     <View
         android:id="@+id/view4"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints" />
-
     <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:ignore="MissingConstraints" />
 
+    <!-- Parte de arriba de la aplicación, decorativa. -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -55,7 +55,6 @@
             android:layout_weight="1"
             android:background="@color/black"
             android:src="@drawable/pokeball" />
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -63,11 +62,10 @@
             android:background="@color/black"
             android:fontFamily="@font/pokemon"
             android:letterSpacing="0.2"
-            android:text="POKEWIKI"
+            android:text="@string/pokewiki"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="37sp" />
-
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -76,8 +74,7 @@
             android:src="@drawable/pokeball" />
     </LinearLayout>
 
-
-
+    <!-- RadioGroup que contiene RadioButtons para elegir si se quiere iniciar sesión o registrarse -->
     <RadioGroup
         android:id="@+id/RGRegistrarseInicio"
         android:layout_width="wrap_content"
@@ -86,35 +83,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:orientation="horizontal">
-
         <RadioButton
             android:id="@+id/RBInicio"
             android:fontFamily="@font/peach"
-            android:text="Inicio Sesión"
+            android:text="@string/inicio_sesi_n"
             android:textColor="@color/black"
             android:onClick="onCheckboxClicked"
             android:buttonTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
         <RadioButton
             android:id="@+id/RBRegistro"
             android:fontFamily="@font/peach"
-            android:text="Registrarse"
+            android:text="@string/registrarse"
             android:onClick="onCheckboxClicked"
             android:textColor="@color/black"
             android:buttonTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RadioGroup>
-
     <TextView
         android:id="@+id/TVinicioRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/pokemon"
         android:letterSpacing="0.1"
-        android:text="Selecciona"
+        android:text="@string/selecciona"
         android:textColor="@color/black"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -123,6 +117,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
+    <!-- Views de donde se sacará el nombre de usuario y la contraseña cuando se le dé al botón de ENTRAR -->
     <EditText
         android:id="@+id/ETUsuario"
         android:layout_width="match_parent"
@@ -130,15 +125,14 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
-        android:background="#7A7979"
+        android:background="@color/Gris"
         android:fontFamily="@font/peach"
-        android:hint="Nombre de Usuario"
+        android:hint="@string/nombre_de_usuario"
         android:padding="10dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TVinicioRegistro" />
-
     <EditText
         android:id="@+id/ETContrasena"
         android:inputType="textPassword"
@@ -147,15 +141,29 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
-        android:background="#7A7979"
+        android:background="@color/Gris"
         android:fontFamily="@font/peach"
-        android:hint="Contraseña"
+        android:hint="@string/contrase_a"
         android:padding="10dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ETUsuario" />
+    <Button
+        style="@style/Boton"
+        android:id="@+id/BTEntrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/FondoDePantalla"
+        android:text="@string/entrar"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CVCalendario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ETContrasena" />
 
+    <!-- Fecha del usuario que al elegirla en el calendario se muestra. -->
     <TextView
         android:id="@+id/TVDate"
         android:layout_width="wrap_content"
@@ -164,24 +172,9 @@
         app:layout_constraintEnd_toStartOf="@+id/BTEntrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ETContrasena" />
-
-    <Button
-        style="@style/Boton"
-        android:id="@+id/BTEntrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/FondoDePantalla"
-        android:text="Entrar"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/CVCalendario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ETContrasena" />
-
     <CalendarView
         android:id="@+id/CVCalendario"
-        android:background="#45000000"
+        android:background="@color/MedioTransparente"
         android:layout_width="280dp"
         android:layout_height="290dp"
         android:layout_marginBottom="10dp"

@@ -3,12 +3,12 @@
     <integer name="totalNumberOfPokemonInPokedex">51</integer>
     <integer name="totalNumberOfObjectsPokeball">11</integer>
 
-    // Tipos
+    <!-- Tipos -->
     <integer name="TipoCuracion">1</integer>
     <integer name="TipoEvolucion">2</integer>
     <integer name="TipoPokeball">3</integer>
 
-    // Id Objetos
+    <!-- Id Objetos -->
     <integer name="objeto1Id">1</integer>
     <integer name="objeto2Id">2</integer>
     <integer name="objeto3Id">3</integer>
@@ -37,7 +37,7 @@
     <integer name="objeto26Id">26</integer>
     <integer name="objeto27Id">27</integer>
 
-    // Id Pokemon
+    <!-- Id Pokemon -->
     <integer name="pokemon1Id">1</integer>
     <integer name="pokemon2Id">2</integer>
     <integer name="pokemon3Id">3</integer>

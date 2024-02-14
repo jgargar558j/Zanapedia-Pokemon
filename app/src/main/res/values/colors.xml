@@ -9,5 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="FondoDePantalla">#DEB887</color>
+    <color name="FondoClaro">#F5DEB3</color>
     <color name="Verde">#8BC34A</color>
+    <color name="Burdeo">#8F0000</color>
+    <color name="MedioTransparente">#45000000</color>
+    <color name="Gris">#7A7979</color>
+    <color name="Transparente">#00000000</color>
 </resources>

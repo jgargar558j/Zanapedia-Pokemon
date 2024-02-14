@@ -5,35 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PokemonActivity"
-    android:background="#F5DEB3">
+    android:background="@color/FondoClaro">
 
+    <!-- Views decorativos de la aplicación. -->
     <View
         android:id="@+id/view"
         android:layout_width="5dp"
         android:layout_height="match_parent"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         tools:ignore="MissingConstraints" />
     <View
         android:layout_width="5dp"
         android:layout_height="match_parent"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         tools:ignore="MissingConstraints" />
-
     <View
         android:id="@+id/view4"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="#8F0000"
+        android:background="@color/Burdeo"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints" />
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/Burdeo"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints" />
 
+    <!-- Parte de arriba de la aplicación, decorativa, decorativo. -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -47,7 +55,6 @@
             android:layout_weight="1"
             android:background="@color/black"
             android:src="@drawable/pokeball" />
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -55,11 +62,10 @@
             android:background="@color/black"
             android:fontFamily="@font/pokemon"
             android:letterSpacing="0.2"
-            android:text="POKEWIKI"
+            android:text="@string/pokewiki"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="37sp" />
-
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -68,21 +74,14 @@
             android:src="@drawable/pokeball" />
     </LinearLayout>
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#8F0000"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:ignore="MissingConstraints" />
-
+    <!-- Nombre, imagen, tipos, descripción y número de la pokédex del Pokemon -->
     <TextView
         android:id="@+id/TVnombreD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/pokemon"
         android:letterSpacing="0.1"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textColor="@color/black"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -91,7 +90,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:ignore="MissingConstraints" />
-
     <ImageView
         android:id="@+id/IVpokemonD"
         android:layout_width="200dp"
@@ -102,7 +100,6 @@
         app:layout_constraintTop_toBottomOf="@+id/TVnombreD"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:ignore="MissingConstraints" />
-
     <ImageView
         android:id="@+id/IVtipo1"
         android:layout_width="150dp"
@@ -113,7 +110,6 @@
         app:layout_constraintStart_toEndOf="@+id/IVpokemonD"
         app:layout_constraintTop_toBottomOf="@+id/TVnombreD"
         app:srcCompat="@drawable/ic_launcher_background" />
-
     <ImageView
         android:id="@+id/IVtipo2"
         android:layout_width="150dp"
@@ -123,52 +119,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/IVpokemonD"
         app:layout_constraintTop_toBottomOf="@+id/IVtipo1" />
-
-    <LinearLayout
-        android:id="@+id/LLVarioColor"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="65dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IVpokemonD"
-        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:fontFamily="@font/peach"
-            android:text="Variocolor:"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
-
-        <Switch
-            android:id="@+id/SWVarioColor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/TVnumero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40sp"
-        android:text="#000"
+        android:text="@string/_000"
         android:textColor="@color/black"
         android:fontFamily="@font/peach"
         app:layout_constraintStart_toEndOf="@id/LLVarioColor"
         app:layout_constraintTop_toBottomOf="@id/IVpokemonD"
         android:layout_marginStart="60dp"
         android:layout_marginTop="-10dp"/>
-
     <TextView
         android:id="@+id/TVdescripcionD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DescripcionD"
+        android:text="@string/descripciond"
         android:fontFamily="@font/peach"
         android:textSize="30sp"
         android:textAlignment="center"
@@ -180,6 +147,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IVpokemonD" />
 
+    <!-- Switch dedicado a que al activar se muestra el Pokemon edición Variocolor -->
+    <LinearLayout
+        android:id="@+id/LLVarioColor"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="65dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVpokemonD"
+        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:fontFamily="@font/peach"
+            android:text="@string/variocolor"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+        <Switch
+            android:id="@+id/SWVarioColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Línea guía para establecer las demas vistas. -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/GLguiaBaja"
         android:layout_width="wrap_content"
@@ -187,6 +181,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="276dp" />
 
+    <!-- Botones que muestran el Pokemon anterior o el siguiente si es que existe -->
     <ImageView
         android:id="@+id/IVPokeballLeft"
         android:layout_width="150dp"
@@ -196,25 +191,23 @@
         app:layout_constraintBottom_toTopOf="@+id/FABVolver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/GLguiaBaja"/>
-
     <ImageButton
         android:id="@+id/IBAnterior"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="20dp"
-        android:background="#00000000"
+        android:background="@color/Transparente"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/FABVolver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/GLguiaBaja"
         app:srcCompat="@drawable/ic_launcher_background" />
-
     <TextView
         android:id="@+id/TVAnterior"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/peach"
-        android:text="Anterior"
+        android:text="@string/anterior"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -222,7 +215,6 @@
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IVPokeballLeft" />
-
     <ImageView
         android:id="@+id/IVPokeballRight"
         android:layout_width="150dp"
@@ -232,26 +224,24 @@
         app:layout_constraintBottom_toTopOf="@+id/FABVolver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/GLguiaBaja" />
-
     <ImageButton
         android:id="@+id/IBSiguiente"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginEnd="20dp"
-        android:background="#00000000"
+        android:background="@color/Transparente"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/FABVolver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/GLguiaBaja"
         app:srcCompat="@drawable/ic_launcher_background" />
-
     <TextView
         android:id="@+id/TVSiguiente"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="-15dp"
         android:fontFamily="@font/peach"
-        android:text="Siguiente"
+        android:text="@string/siguiente"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -259,6 +249,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IVPokeballLeft" />
 
+    <!-- Botón que te devuelve a la vista de la lista de Pokemon -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:tint="@color/white"
         android:id="@+id/FABVolver"
@@ -268,8 +259,5 @@
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
