@@ -49,7 +49,8 @@
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
+            app:shapeAppearanceOverlay="@style/roundedImageView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -66,7 +67,8 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="37sp" />
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
+            app:shapeAppearanceOverlay="@style/circularImageView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

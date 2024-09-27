@@ -1,12 +1,14 @@
 package es.iessaladillo.jgargar558j.pokemonwiki
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ListView
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
@@ -24,9 +26,10 @@ class Principal_Activity : AppCompatActivity() {
     private lateinit var pistaBusqueda:String
     private lateinit var ibObjetos:ImageButton
     private lateinit var ibPokemon:ImageButton
+    private lateinit var ibInfo:ImageButton
     private var isSet:Boolean = false
-    private lateinit var ibVideo:ImageButton
-    private lateinit var ibPerfil:ImageButton
+    //private lateinit var ibVideo:ImageButton
+    //private lateinit var ibPerfil:ImageButton
 
     /**
      * Método llamado cuando se crea la actividad. Se encarga de inicializar la interfaz de usuario
@@ -47,10 +50,11 @@ class Principal_Activity : AppCompatActivity() {
     private fun initializeVariables(){
         initializeList()
 
-        ibPerfil = findViewById(R.id.IBPerfil)
-        ibVideo = findViewById(R.id.IBVideo)
+        //ibPerfil = findViewById(R.id.IBPerfil)
+        //ibVideo = findViewById(R.id.IBVideo)
         ibObjetos = findViewById(R.id.IBObjetos)
         ibPokemon = findViewById(R.id.IBPokemon)
+        ibInfo = findViewById(R.id.IBInfo)
         lisPokemon = findViewById(R.id.lisPokemon)
         etBuscador = findViewById(R.id.ETBuscador)
         buscador = findViewById(R.id.Buscar)
@@ -129,6 +133,8 @@ class Principal_Activity : AppCompatActivity() {
      * Si no se encuentra ninguna coincidencia, se restaura la lista de muestra con todos los Pokémon.
      * Finalmente, se notifica al adaptador que los datos han cambiado.
      */
+
+    @SuppressLint("ResourceType")
     fun buscador(){
         buscador.setOnClickListener{
             muestreo.clear()
@@ -166,16 +172,32 @@ class Principal_Activity : AppCompatActivity() {
             val intent = Intent(this,Principal_Activity::class.java)
             startActivity(intent)
         }
+
+        ibInfo.setOnClickListener {
+            dialogoCopyright()
+        }
+
         // Listener para el botón de la vista de los extras
+        /*
         ibVideo.setOnClickListener {
             val intent = Intent(this,VideoViewActivity::class.java)
             startActivity(intent)
-        }
+        }*/
         // Listener para el botón de la vista del perfil
-        ibPerfil.setOnClickListener {
+        /*ibPerfil.setOnClickListener {
             val intent = Intent(this,PerfilActivity::class.java)
             startActivity(intent)
-        }
+        }*/
+    }
+
+    fun dialogoCopyright(){
+        AlertDialog.Builder(this)
+            .setTitle("Información sobre Copyright")
+            .setMessage("La aplicación Zanapedia Pokémon es un proyecto no comercial y sin fines de lucro. Todo el contenido relacionado con la aplicación, incluidos nombres, imágenes, personajes, y cualquier otro material asociado con Pokémon, es propiedad intelectual de Nintendo, Game Freak y The Pokémon Company.\n" +
+                    "\n" +
+                    "Zanapedia Pokémon no tiene ningún vínculo oficial con estas compañías y no pretende obtener beneficios económicos a través de su uso. Este proyecto se desarrolla con fines informativos y recreativos, respetando los derechos de sus creadores originales. Si Nintendo o cualquiera de las entidades involucradas lo requiere, estamos dispuestos a eliminar el contenido en cuestión o la aplicación en su totalidad.")
+            .setPositiveButton("Ok", DialogInterface.OnClickListener { dialog, which ->  })
+            .show()
     }
 
     /**

@@ -26,4 +26,33 @@
         <item name="chipStrokeColor">@color/purple_200</item>
         <item name="chipStrokeWidth">2dp</item>
     </style>
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="circularImageView">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="triangularImageView">
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSizeBottomRight">50%</item>
+        <item name="cornerFamilyBottomLeft">cut</item>
+        <item name="cornerSizeBottomLeft">50%</item>
+    </style>
+    <style name="staggeredImageView">
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSizeBottomRight">50%</item>
+        <item name="cornerFamilyBottomLeft">cut</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
 </resources>

@@ -18,7 +18,7 @@
             android:name=".PerfilActivity"
             android:exported="false" />
         <activity
-            android:name=".Principal_Activity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".VideoViewActivity"
@@ -36,7 +36,7 @@
             android:name=".item_pokemon"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Principal_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
